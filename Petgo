@@ -1,0 +1,56 @@
+-- Create the ScreenGui
+local screenGui = Instance.new("ScreenGui")
+screenGui.Name = "BeamGui"
+screenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+-- Create the Frame
+local frame = Instance.new("Frame")
+frame.Size = UDim2.new(0, 400, 0, 200)
+frame.Position = UDim2.new(0.5, -200, 0.5, -100)
+frame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+frame.BorderSizePixel = 0
+frame.Draggable = true
+frame.Active = true
+frame.Parent = screenGui
+
+-- Create the TextLabel
+local textLabel = Instance.new("TextLabel")
+textLabel.Size = UDim2.new(1, 0, 0.5, 0)
+textLabel.Position = UDim2.new(0, 0, 0, 0)
+textLabel.BackgroundTransparency = 1
+textLabel.Text = "Do you want to know How to Beam? Join now!"
+textLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+textLabel.TextScaled = true
+textLabel.Font = Enum.Font.GothamBold
+textLabel.Parent = frame
+
+-- Create the Copy Button
+local copyButton = Instance.new("TextButton")
+copyButton.Size = UDim2.new(0.8, 0, 0.3, 0)
+copyButton.Position = UDim2.new(0.1, 0, 0.6, 0)
+copyButton.BackgroundColor3 = Color3.fromRGB(0, 170, 255)
+copyButton.Text = "Copy Discord Link"
+copyButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+copyButton.TextScaled = true
+copyButton.Font = Enum.Font.GothamBold
+copyButton.Parent = frame
+
+-- Add effects to the button
+local uiCorner = Instance.new("UICorner")
+uiCorner.CornerRadius = UDim.new(0, 10)
+uiCorner.Parent = copyButton
+
+local uiStroke = Instance.new("UIStroke")
+uiStroke.Thickness = 2
+uiStroke.Color = Color3.fromRGB(0, 85, 127)
+uiStroke.Parent = copyButton
+
+-- Function to copy the Discord link
+local function copyLink()
+    setclipboard("https://discord.gg/kRG8Aq2jKk")
+    copyButton.Text = "Link Copied!"
+    wait(2)
+    copyButton.Text = "Copy Discord Link"
+end
+
+copyButton.MouseButton1Click:Connect(copyLink)
